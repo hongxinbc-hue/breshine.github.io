@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breshine | Modular Lighting Ecosystem</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #d4af37; /* 琥珀金 */
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        h1 { font-size: 3rem; margin-bottom: 10px; color: var(--accent-color); }
+        p { font-size: 1.2rem; max-width: 600px; line-height: 1.6; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Breshine</h1>
+        <p>Illuminating Your Wild Rhythm. Modular camping lights designed for infinite possibilities.</p>
+    </div>
+
+    <div class="feature-grid">
+        <div class="card">
+            <h3>Modular Design</h3>
+            <p>Connect and stack your light modules to create the perfect setup for any outdoor environment.</p>
+        </div>
+        <div class="card">
+            <h3>5 Light Modes</h3>
+            <p>From steady glow to amber breathing and tactical strobe, light up your night your way.</p>
+        </div>
+        <div class="card">
+            <h3>Rugged Reliability</h3>
+            <p>Built for the elements, Breshine provides consistent performance in the toughest conditions.</p>
+        </div>
+    </div>
+</body>
+</html>
