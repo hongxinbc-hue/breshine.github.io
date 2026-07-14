@@ -1,12 +1,12 @@
 ﻿产品编号,类目,新品,产品型号,基本产品参数,图片路径
-RH38MINI,CAMPING LIGHT,1,RH38MINI,Portable camping light,static/picture/Product/RH38MINI.png
-RH38,CAMPING LIGHT,1,RH38,Rechargeable camping light,static/picture/Product/RH38.png
-RH38PRO,CAMPING LIGHT,1,RH38PRO,Tripod camping light,static/picture/Product/RH38PRO.png
-RHE3,CAMPING LIGHT,1,RHE3,Warm portable camping light,static/picture/Product/RHE3.png
-RHE3S,CAMPING LIGHT,1,RHE3S,Portable camping light,static/picture/Product/RHE3S.png
-RHE3500,CAMPING LIGHT,1,RHE3500,Portable camping light,static/picture/Product/RHE3500.png
-BRN305,NIGHT LIGHT,1,BRN305,Motion sensor night light,static/picture/Product/BRN305.png
-BRN306,NIGHT LIGHT,1,BRN306,Smart motion sensor light,static/picture/Product/BRN306.png
-BRN203,NIGHT LIGHT,1,BRN203,Color temperature night lights,static/picture/Product/BRN203.png
-BRC401,CELLING LAMP,1,BRC401,Wall sconce night light,static/picture/Product/BRC401.png
-BRT106,CABINET LIGHT,1,BRT106,Hanging night light,static/picture/Product/BRT106.png
+RH38MINI,CAMPING LIGHT,1,RH38MINI,Portable camping light,products/image/RH38MINI.png
+RH38,CAMPING LIGHT,1,RH38,Rechargeable camping light,products/image/RH38.png
+RH38PRO,CAMPING LIGHT,1,RH38PRO,Tripod camping light,products/image/RH38PRO.png
+RHE3,CAMPING LIGHT,1,RHE3,Warm portable camping light,products/image/RHE3.png
+RHE3S,CAMPING LIGHT,1,RHE3S,Portable camping light,products/image/RHE3S.png
+RHE3500,CAMPING LIGHT,1,RHE3500,Portable camping light,products/image/RHE3500.png
+BRN305,NIGHT LIGHT,1,BRN305,Motion sensor night light,products/image/BRN305.png
+BRN306,NIGHT LIGHT,1,BRN306,Smart motion sensor light,products/image/BRN306.png
+BRN203,NIGHT LIGHT,1,BRN203,Color temperature night lights,products/image/BRN203.png
+BRC401,CELLING LAMP,1,BRC401,Wall sconce night light,products/image/BRC401.png
+BRT106,CABINET LIGHT,1,BRT106,Hanging night light,products/image/BRT106.png
