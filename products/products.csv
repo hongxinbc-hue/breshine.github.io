@@ -1,32 +1,12 @@
 ﻿产品编号,类目,新品,产品型号,基本产品参数,图片路径
-P001,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P002,CAMPING LIGHT,1,Camping Light 2,Rechargeable camping light,static/picture/port2.jpg
-P003,CAMPING LIGHT,1,Camping Light 3,Tripod camping light,static/picture/port3.jpg
-P004,CAMPING LIGHT,1,Camping Light 4,Warm portable camping light,static/picture/port4.jpg
-P005,NIGHT LIGHT,1,Night Light 1,Hanging night light,static/picture/port5.jpg
-P006,NIGHT LIGHT,1,Night Light 2,Wall sconce night light,static/picture/port6.jpg
+RH38MINI,CAMPING LIGHT,1,RH38MINI,Portable camping light,static/picture/RH38MINI.jpg
+P002,CAMPING LIGHT,1,RH38,Rechargeable camping light,static/picture/port2.jpg
+P003,CAMPING LIGHT,1,RH38PRO,Tripod camping light,static/picture/port3.jpg
+P004,CAMPING LIGHT,1,RHE3,Warm portable camping light,static/picture/port4.jpg
+P010,CAMPING LIGHT,1,RHE3S,Portable camping light,static/picture/port1.jpg
+P011,CAMPING LIGHT,1,RHE3500,Portable camping light,static/picture/port1.jpg
+P005,NIGHT LIGHT,1,BRT085,Hanging night light,static/picture/port5.jpg
+P006,CELLING LAMP,1,BRC041,Wall sconce night light,static/picture/port6.jpg
 P007,NIGHT LIGHT,1,Night Light 3,Motion sensor night light,static/picture/port7.jpg
 P008,NIGHT LIGHT,1,Night Light 4,Smart motion sensor light,static/picture/port8.jpg
 P009,NIGHT LIGHT,1,Night Light 5,Color temperature night lights,static/picture/port9.jpg
-P010,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P011,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P012,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P013,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P014,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P015,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P016,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P017,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P018,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P019,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P020,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P021,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P022,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P023,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P024,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P025,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P026,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P027,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P028,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P029,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P030,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
-P031,CAMPING LIGHT,1,Camping Light 1,Portable camping light,static/picture/port1.jpg
