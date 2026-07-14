@@ -26,9 +26,9 @@
 @media (max-width: 767px) {
 	.main-slider-area,
 	.main-slider-area #mainSlider_id2 {
-		height: 280px !important;
-		min-height: 280px !important;
-		max-height: 280px !important;
+		height: 37.5vw !important;
+		min-height: 37.5vw !important;
+		max-height: 37.5vw !important;
 		overflow: hidden !important;
 	}
 	.main-slider-area #mainSlider_id2 img.breshine-slide {
@@ -40,7 +40,9 @@
 		width: 100% !important;
 		height: 100% !important;
 		opacity: 0 !important;
-		object-fit: cover !important;
+		object-fit: contain !important;
+		object-position: center center !important;
+		transition: opacity 1.5s ease-in-out !important;
 	}
 	.main-slider-area #mainSlider_id2 img.breshine-slide.is-active {
 		opacity: 1 !important;

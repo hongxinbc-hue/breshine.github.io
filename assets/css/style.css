@@ -1107,11 +1107,11 @@ table#wp-calendar td#today {
     visibility: visible !important;
     opacity: 0;
     z-index: 1;
-    transition: opacity .6s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
+    will-change: opacity;
 }
 .main-slider-area #mainSlider_id2 .breshine-slide.is-active {
     opacity: 1;
-    z-index: 2;
 }
 .breshine-slider-caption {
     position: absolute;
@@ -1136,9 +1136,9 @@ table#wp-calendar td#today {
 }
 @media (max-width: 767px) {
     .main-slider-area {
-        height: 280px !important;
-        min-height: 280px !important;
-        max-height: 280px !important;
+        height: 37.5vw !important;
+        min-height: 37.5vw !important;
+        max-height: 37.5vw !important;
     }
 }
 .nivo-caption {
