@@ -2098,9 +2098,9 @@ span.witr_list_text {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 110px;
-    max-width: 32%;
-    height: auto;
+    width: auto;
+    max-width: calc(100% - 32px);
+    height: 14px;
     opacity: .95;
     z-index: 2;
     pointer-events: none;
