@@ -115,9 +115,9 @@
                            <ul id="filter" class="filter_menu">
 
 
-                              <li class="current_menu_item" data-filter=".New-Release">New Release</li>
-                              <li data-filter=".CAMPING-LIGHT">CAMPING LIGHT</li>
-                              <li data-filter=".NIGHT-LIGHT">NIGHT LIGHT</li>
+                              <li class="current_menu_item" data-category="New Release" data-filter=".New-Release">New Release</li>
+                              <li data-category="CAMPING LIGHT" data-filter=".CAMPING-LIGHT">CAMPING LIGHT</li>
+                              <li data-category="NIGHT LIGHT" data-filter=".NIGHT-LIGHT">NIGHT LIGHT</li>
 							  
                            </ul>
                         </div>
@@ -151,7 +151,13 @@
 
  <!-- map area -->
                      
-                     </div>   </div>         </div>    </div>  </div>  </div>   <p>
+                     </div>
+                        <div class="product-pagination" id="product-pagination" hidden>
+                           <button type="button" id="product-prev" aria-label="Previous product page">&#8593; Previous</button>
+                           <span id="product-page-status" aria-live="polite"></span>
+                           <button type="button" id="product-next" aria-label="Next product page">Next &#8595;</button>
+                        </div>
+                     </div>         </div>    </div>  </div>  </div>   <p>
 
       <!--  contact area -->
 	  <h2 id="Contact-section"></h2>
@@ -249,5 +255,6 @@
       <script src="static/js/jquery.meanmenu.js"></script>
       <script src="static/js/ajax-mail.js"></script>
       <script src="static/js/theme.js"></script>
+      <script src="static/js/products.js"></script>
    </body>
 </html>

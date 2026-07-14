@@ -2017,6 +2017,68 @@ span.witr_list_text {
     background: #03a9f4;
     color: #fff;
 }
+
+/* Product category tabs and table-driven pagination. */
+.product-area-aligned .port2clmn .witr_section_title,
+.product-area-aligned .witr_section_title {
+    margin-bottom: 18px;
+}
+.product-area-aligned .portfolio_nav {
+    margin-bottom: 12px;
+}
+.product-area-aligned .portfolio_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+.product-area-aligned.port2clmn .portfolio_nav ul li {
+    margin: 0 0 0 -1px;
+    padding: 12px 24px;
+    border: 1px solid #ddd;
+    border-bottom-color: #03a9f4;
+    border-radius: 14px 14px 0 0;
+    background: #f8f8f8;
+    position: relative;
+    z-index: 1;
+}
+.product-area-aligned.port2clmn .portfolio_nav ul li:first-child {
+    margin-left: 0;
+}
+.product-area-aligned.port2clmn .portfolio_nav ul li.current_menu_item {
+    z-index: 2;
+    border-color: #03a9f4;
+    background: #03a9f4;
+    color: #fff;
+}
+.product-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 16px;
+}
+.product-pagination[hidden] {
+    display: none;
+}
+.product-pagination button {
+    border: 1px solid #03a9f4;
+    border-radius: 4px;
+    padding: 9px 16px;
+    background: #fff;
+    color: #03a9f4;
+    cursor: pointer;
+}
+.product-pagination button:hover:not(:disabled) {
+    background: #03a9f4;
+    color: #fff;
+}
+.product-pagination button:disabled {
+    cursor: not-allowed;
+    opacity: .45;
+}
 .p3clmn .pstyle2 .prot_content_inner {
     top: 50%;
     transition: all .3s ease-in-out .3s;

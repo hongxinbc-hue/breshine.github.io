@@ -1,0 +1,143 @@
+(function ($) {
+    'use strict';
+
+    var pageSize = 9;
+    var products = [];
+    var activeCategory = 'New Release';
+    var currentPage = 1;
+    var $grid = $('#em_load');
+    var $pagination = $('#product-pagination');
+    var $status = $('#product-page-status');
+
+    function parseCsv(text) {
+        var rows = [];
+        var row = [];
+        var cell = '';
+        var quoted = false;
+
+        for (var i = 0; i < text.length; i += 1) {
+            var char = text[i];
+            if (char === '"') {
+                if (quoted && text[i + 1] === '"') {
+                    cell += '"';
+                    i += 1;
+                } else {
+                    quoted = !quoted;
+                }
+            } else if (char === ',' && !quoted) {
+                row.push(cell);
+                cell = '';
+            } else if ((char === '\n' || char === '\r') && !quoted) {
+                if (char === '\r' && text[i + 1] === '\n') i += 1;
+                row.push(cell);
+                if (row.some(function (value) { return value !== ''; })) rows.push(row);
+                row = [];
+                cell = '';
+            } else {
+                cell += char;
+            }
+        }
+        if (cell || row.length) {
+            row.push(cell);
+            rows.push(row);
+        }
+
+        var headerAliases = {
+            '产品编号': 'id',
+            '类目': 'category',
+            '新品': 'is_new',
+            '产品名称': 'name',
+            '图片路径': 'image',
+            '图片说明': 'alt',
+            '排序': 'sort_order',
+            '展示': 'enabled'
+        };
+        var headers = rows.shift().map(function (header) {
+            var cleanHeader = header.trim();
+            return headerAliases[cleanHeader] || cleanHeader;
+        });
+        return rows.map(function (values) {
+            var item = {};
+            headers.forEach(function (header, index) { item[header] = (values[index] || '').trim(); });
+            return item;
+        });
+    }
+
+    function escapeHtml(value) {
+        return $('<div>').text(value || '').html();
+    }
+
+    function filteredProducts() {
+        return products.filter(function (product) {
+            if (product.enabled !== '1') return false;
+            if (activeCategory === 'New Release') return product.is_new === '1';
+            return product.category === activeCategory;
+        }).sort(function (a, b) {
+            return Number(a.sort_order || 0) - Number(b.sort_order || 0);
+        });
+    }
+
+    function productMarkup(product) {
+        var name = escapeHtml(product.name);
+        var category = escapeHtml(product.category);
+        var image = escapeHtml(product.image);
+        var alt = escapeHtml(product.alt || product.name);
+        return '<div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 witr_all_mb_30 product-card">' +
+            '<div class="single_protfolio"><div class="prot_thumb">' +
+            '<img src="' + image + '" alt="' + alt + '" loading="lazy">' +
+            '<div class="prot_content em_port_content"><div class="prot_content_inner">' +
+            '<div class="picon"><a class="portfolio-icon venobox vbox-item" data-gall="myGallery" href="' + image + '"><i class="icofont-image"></i></a></div>' +
+            '<div class="porttitle_inner"><h3><a href="#">' + name + '</a></h3>' +
+            '<p><span class="category-item-p">' + category + '</span></p></div>' +
+            '</div></div></div></div></div>';
+    }
+
+    function render() {
+        var filtered = filteredProducts();
+        var pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+        if (currentPage > pageCount) currentPage = pageCount;
+        var start = (currentPage - 1) * pageSize;
+        var visible = filtered.slice(start, start + pageSize);
+
+        if ($grid.data('isotope')) $grid.isotope('destroy');
+        $grid.html(visible.map(productMarkup).join(''));
+        if ($.fn.venobox) $('.venobox').venobox();
+
+        $pagination.prop('hidden', filtered.length <= pageSize);
+        $status.text('Page ' + currentPage + ' / ' + pageCount);
+        $('#product-prev').prop('disabled', currentPage <= 1);
+        $('#product-next').prop('disabled', currentPage >= pageCount);
+    }
+
+    $.ajax({
+        url: 'products/products.csv',
+        dataType: 'text',
+        cache: false
+    }).done(function (csv) {
+        products = parseCsv(csv.replace(/^\uFEFF/, ''));
+        $('.filter_menu li').off('click').on('click', function () {
+            $('.filter_menu li').removeClass('current_menu_item');
+            $(this).addClass('current_menu_item');
+            activeCategory = $(this).data('category');
+            currentPage = 1;
+            render();
+        });
+        $('#product-prev').on('click', function () {
+            if (currentPage > 1) {
+                currentPage -= 1;
+                render();
+                document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        $('#product-next').on('click', function () {
+            if (currentPage < Math.ceil(filteredProducts().length / pageSize)) {
+                currentPage += 1;
+                render();
+                document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        render();
+    }).fail(function () {
+        console.warn('Product table could not be loaded; static product cards remain visible.');
+    });
+}(jQuery));
