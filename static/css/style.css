@@ -2079,6 +2079,44 @@ span.witr_list_text {
     cursor: not-allowed;
     opacity: .45;
 }
+
+/* Restore the product image hover overlay used by the original template. */
+.pstyle2 .single_protfolio .em_port_content {
+    top: -100%;
+    background: rgba(0, 0, 0, 0);
+}
+.pstyle2 .single_protfolio:hover .em_port_content,
+.pstyle2 .single_protfolio:focus-within .em_port_content {
+    top: 0;
+    background: rgba(0, 0, 0, .30);
+}
+.product-basic-specs {
+    margin: 5px 0 0 !important;
+    line-height: 1.45 !important;
+}
+.product-basic-specs span {
+    font-size: 15px;
+    font-weight: 400;
+    white-space: normal;
+}
+.product-model {
+    display: block;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.pstyle2 .product-card .prot_content_inner,
+.pstyle2 .product-card .single_protfolio:hover .prot_content_inner,
+.pstyle2 .product-card .single_protfolio:focus-within .prot_content_inner {
+    left: auto;
+    right: 24px;
+    top: auto;
+    bottom: 24px;
+    width: calc(100% - 48px);
+    transform: none;
+    text-align: right;
+}
 .p3clmn .pstyle2 .prot_content_inner {
     top: 50%;
     transition: all .3s ease-in-out .3s;

@@ -47,6 +47,8 @@
             '类目': 'category',
             '新品': 'is_new',
             '产品名称': 'name',
+            '产品型号': 'model',
+            '基本产品参数': 'specs',
             '图片路径': 'image',
             '图片说明': 'alt',
             '排序': 'sort_order',
@@ -69,26 +71,48 @@
 
     function filteredProducts() {
         return products.filter(function (product) {
-            if (product.enabled !== '1') return false;
+            if (!product.id || !product.image) return false;
+            if (product.enabled && product.enabled !== '1') return false;
             if (activeCategory === 'New Release') return product.is_new === '1';
             return product.category === activeCategory;
-        }).sort(function (a, b) {
-            return Number(a.sort_order || 0) - Number(b.sort_order || 0);
+        });
+    }
+
+    function buildCategoryTabs() {
+        var categories = [];
+        products.forEach(function (product) {
+            if (!product.id || !product.image || !product.category) return;
+            if (product.enabled && product.enabled !== '1') return;
+            if (categories.indexOf(product.category) === -1) categories.push(product.category);
+        });
+
+        var hasNewProducts = products.some(function (product) {
+            return product.id && product.image && product.is_new === '1' && (!product.enabled || product.enabled === '1');
+        });
+        activeCategory = hasNewProducts ? 'New Release' : (categories[0] || '');
+
+        var $tabs = $('#filter').empty();
+        var tabNames = hasNewProducts ? ['New Release'].concat(categories) : categories;
+        tabNames.forEach(function (category) {
+            $('<li>')
+                .text(category)
+                .attr('data-category', category)
+                .toggleClass('current_menu_item', category === activeCategory)
+                .appendTo($tabs);
         });
     }
 
     function productMarkup(product) {
-        var name = escapeHtml(product.name);
-        var category = escapeHtml(product.category);
+        var name = escapeHtml(product.model || product.name || product.id);
+        var category = escapeHtml(product.specs || product.category);
         var image = escapeHtml(product.image);
-        var alt = escapeHtml(product.alt || product.name);
+        var alt = escapeHtml(product.alt || product.model || product.name || product.id);
         return '<div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 witr_all_mb_30 product-card">' +
             '<div class="single_protfolio"><div class="prot_thumb">' +
             '<img src="' + image + '" alt="' + alt + '" loading="lazy">' +
             '<div class="prot_content em_port_content"><div class="prot_content_inner">' +
-            '<div class="picon"><a class="portfolio-icon venobox vbox-item" data-gall="myGallery" href="' + image + '"><i class="icofont-image"></i></a></div>' +
-            '<div class="porttitle_inner"><h3><a href="#">' + name + '</a></h3>' +
-            '<p><span class="category-item-p">' + category + '</span></p></div>' +
+            '<div class="porttitle_inner"><h3><span class="product-model">' + name + '</span></h3>' +
+            '<p class="product-basic-specs"><span class="category-item-p">' + category + '</span></p></div>' +
             '</div></div></div></div></div>';
     }
 
@@ -115,6 +139,7 @@
         cache: false
     }).done(function (csv) {
         products = parseCsv(csv.replace(/^\uFEFF/, ''));
+        buildCategoryTabs();
         $('.filter_menu li').off('click').on('click', function () {
             $('.filter_menu li').removeClass('current_menu_item');
             $(this).addClass('current_menu_item');
