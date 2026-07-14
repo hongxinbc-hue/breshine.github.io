@@ -1093,11 +1093,39 @@ table#wp-calendar td#today {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
-.main-slider-area #mainSlider_id2 .nivo-main-image {
+.main-slider-area #mainSlider_id2 .nivo-main-image,
+.main-slider-area #mainSlider_id2 .breshine-slide {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
     object-position: center;
+}
+.main-slider-area #mainSlider_id2 .breshine-slide {
+    position: absolute;
+    inset: 0;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .6s ease-in-out;
+}
+.main-slider-area #mainSlider_id2 .breshine-slide.is-active {
+    opacity: 1;
+    z-index: 2;
+}
+.breshine-slider-caption {
+    position: absolute;
+    inset: 0;
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+    transition: opacity .35s ease;
+    pointer-events: none;
+}
+.breshine-slider-caption:not(.is-visible) {
+    opacity: 0;
+    visibility: hidden;
 }
 @media (max-width: 991px) {
     .main-slider-area {
