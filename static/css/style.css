@@ -2099,14 +2099,14 @@ span.witr_list_text {
     line-height: 1.25 !important;
 }
 .product-basic-specs span {
-    font-size: 14px;
+    font-size: 6px;
     font-weight: 400;
     white-space: normal;
 }
 .product-model {
     display: block;
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1.2;
 }
