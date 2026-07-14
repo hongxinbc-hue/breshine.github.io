@@ -2117,7 +2117,7 @@ span.witr_list_text {
     white-space: normal;
     transition: color .2s ease;
 }
-.product-model {
+.product-card .porttitle_inner h3 a.product-model {
     display: block;
     color: #fff;
     font-size: 10px;
@@ -2130,8 +2130,8 @@ span.witr_list_text {
     margin: 0;
     line-height: 10px;
 }
-.product-model:hover,
-.product-model:focus {
+.product-card .porttitle_inner h3 a.product-model:hover,
+.product-card .porttitle_inner h3 a.product-model:focus {
     color: #03a9f4;
 }
 .pstyle2 .product-card .prot_content_inner,
