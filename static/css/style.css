@@ -1079,6 +1079,28 @@ table#wp-calendar td#today {
     display: block;
     position: relative;
 }
+.main-slider-area .em-nivo-slider-wrapper,
+.main-slider-area #mainSlider_id2 {
+    height: 560px !important;
+}
+.main-slider-area #mainSlider_id2 .nivo-main-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+}
+@media (max-width: 991px) {
+    .main-slider-area .em-nivo-slider-wrapper,
+    .main-slider-area #mainSlider_id2 {
+        height: 360px !important;
+    }
+}
+@media (max-width: 767px) {
+    .main-slider-area .em-nivo-slider-wrapper,
+    .main-slider-area #mainSlider_id2 {
+        height: 220px !important;
+    }
+}
 .nivo-caption {
     background: rgba(0,0,0,0);
     height: 100%;
@@ -2094,13 +2116,15 @@ span.witr_list_text {
     top: 0;
     background: rgba(0, 0, 0, .30);
 }
-.product-hover-logo {
+.prot_thumb img.product-hover-logo {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: auto;
+    width: auto !important;
     max-width: calc(100% - 32px);
-    height: 14px;
+    height: 14px !important;
+    max-height: 14px;
+    object-fit: contain;
     opacity: .95;
     z-index: 2;
     pointer-events: none;
