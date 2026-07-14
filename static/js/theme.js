@@ -105,7 +105,7 @@
 			/*==== slider js  ====*/
 
 			$('#mainSlider_id2').nivoSlider({
-				directionNav: true,
+				directionNav: false,
 				animSpeed: 1000,
 				slices: 18,
 				pauseTime: 6000,
@@ -480,7 +480,6 @@
 			});
 
 })(jQuery);
-
 
 
 

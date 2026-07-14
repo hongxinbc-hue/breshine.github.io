@@ -1081,7 +1081,7 @@ table#wp-calendar td#today {
 }
 .main-slider-area .em-nivo-slider-wrapper,
 .main-slider-area #mainSlider_id2 {
-    height: 560px !important;
+    height: 720px !important;
 }
 .main-slider-area #mainSlider_id2 .nivo-main-image {
     width: 100% !important;
@@ -1092,13 +1092,13 @@ table#wp-calendar td#today {
 @media (max-width: 991px) {
     .main-slider-area .em-nivo-slider-wrapper,
     .main-slider-area #mainSlider_id2 {
-        height: 360px !important;
+        height: 460px !important;
     }
 }
 @media (max-width: 767px) {
     .main-slider-area .em-nivo-slider-wrapper,
     .main-slider-area #mainSlider_id2 {
-        height: 220px !important;
+        height: 280px !important;
     }
 }
 .nivo-caption {
