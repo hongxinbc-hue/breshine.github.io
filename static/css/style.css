@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Template Name:TRADING 
 */
 
@@ -445,6 +445,15 @@ span.divider_text {
 }
 .trading_nav_area.prefix .trading_menu > ul > li.current > a {
     color: #03a9f4;
+}
+/* Compact sticky navigation after the page starts scrolling. */
+.trading_nav_area.prefix .trading_menu > ul > li > a {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+.trading_nav_area.prefix .logo img {
+    width: auto;
+    max-height: 40px;
 }
 .witr_h_h2 .trading_menu {
     justify-content: space-around;
@@ -5114,9 +5123,10 @@ a.thumbnail_overly img {
 
  text-align:center; font-size:14px 
    
-     /*ÉèÖÃÐÐ¸ßÎª50ÏñËØ*/
+     /*ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½Îª50ï¿½ï¿½ï¿½ï¿½*/
   }
    
   .Ycustom-row {
-    height: 3px; /*ÉèÖÃÐÐ¸ßÎª50ÏñËØ*/
+    height: 3px; /*ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½Îª50ï¿½ï¿½ï¿½ï¿½*/
   }
+

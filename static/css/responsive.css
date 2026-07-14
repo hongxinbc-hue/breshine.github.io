@@ -2898,4 +2898,35 @@
  
  
 }
+
+/* Keep the product section aligned with the Contact section on every screen. */
+.product-area-aligned {
+	padding-top: 90px;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/* Scale the header logo proportionally on phones. */
+@media (max-width: 767px) {
+	.trading-main-menu .logo img,
+	.mobile_logo_area img {
+		width: 34vw;
+		max-width: 140px;
+		height: auto;
+	}
+	.mobile_logo_area {
+		position: relative;
+		z-index: 10000;
+		box-sizing: border-box;
+		min-height: 58px;
+		padding: 10px 15px;
+		background: #fff;
+		line-height: 1;
+	}
+	.mobile_logo_area a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
  
