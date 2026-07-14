@@ -3,7 +3,8 @@
 
     var pageSize = 9;
     var products = [];
-    var activeCategory = 'New Release';
+    var newReleaseSelection = [];
+    var activeCategory = 'NEW RELEASE';
     var currentPage = 1;
     var $grid = $('#em_load');
     var $pagination = $('#product-pagination');
@@ -73,9 +74,22 @@
         return products.filter(function (product) {
             if (!product.id || !product.image) return false;
             if (product.enabled && product.enabled !== '1') return false;
-            if (activeCategory === 'New Release') return product.is_new === '1';
+            if (activeCategory === 'NEW RELEASE') return newReleaseSelection.indexOf(product) !== -1;
             return product.category === activeCategory;
         });
+    }
+
+    function selectRandomNewReleases() {
+        var candidates = products.filter(function (product) {
+            return product.id && product.image && product.is_new === '1' && (!product.enabled || product.enabled === '1');
+        }).slice();
+        for (var i = candidates.length - 1; i > 0; i -= 1) {
+            var randomIndex = Math.floor(Math.random() * (i + 1));
+            var temporary = candidates[i];
+            candidates[i] = candidates[randomIndex];
+            candidates[randomIndex] = temporary;
+        }
+        newReleaseSelection = candidates.slice(0, pageSize);
     }
 
     function buildCategoryTabs() {
@@ -86,13 +100,11 @@
             if (categories.indexOf(product.category) === -1) categories.push(product.category);
         });
 
-        var hasNewProducts = products.some(function (product) {
-            return product.id && product.image && product.is_new === '1' && (!product.enabled || product.enabled === '1');
-        });
-        activeCategory = hasNewProducts ? 'New Release' : (categories[0] || '');
+        var hasNewProducts = newReleaseSelection.length > 0;
+        activeCategory = hasNewProducts ? 'NEW RELEASE' : (categories[0] || '');
 
         var $tabs = $('#filter').empty();
-        var tabNames = hasNewProducts ? ['New Release'].concat(categories) : categories;
+        var tabNames = hasNewProducts ? ['NEW RELEASE'].concat(categories) : categories;
         tabNames.forEach(function (category) {
             $('<li>')
                 .text(category)
@@ -139,6 +151,7 @@
         cache: false
     }).done(function (csv) {
         products = parseCsv(csv.replace(/^\uFEFF/, ''));
+        selectRandomNewReleases();
         buildCategoryTabs();
         $('.filter_menu li').off('click').on('click', function () {
             $('.filter_menu li').removeClass('current_menu_item');
