@@ -122,8 +122,9 @@
         return '<div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 witr_all_mb_30 product-card">' +
             '<div class="single_protfolio"><div class="prot_thumb">' +
             '<img src="' + image + '" alt="' + alt + '" loading="lazy">' +
-            '<div class="prot_content em_port_content"><div class="prot_content_inner">' +
-            '<div class="porttitle_inner"><h3><span class="product-model">' + name + '</span></h3>' +
+            '<div class="prot_content em_port_content"><img class="product-hover-logo" src="static/picture/logo3.png" alt="BRESHINE">' +
+            '<div class="prot_content_inner">' +
+            '<div class="porttitle_inner"><h3><a class="product-model venobox" data-gall="productGallery" href="' + image + '" title="' + name + '">' + name + '</a></h3>' +
             '<p class="product-basic-specs"><span class="category-item-p">' + category + '</span></p></div>' +
             '</div></div></div></div></div>';
     }
