@@ -1078,10 +1078,20 @@ table#wp-calendar td#today {
     overflow: hidden;
     display: block;
     position: relative;
+    height: 720px !important;
+    min-height: 720px !important;
+    max-height: 720px !important;
 }
+.main-slider-area > .container-fluid,
+.main-slider-area > .container-fluid > .row,
+.main-slider-area > .container-fluid > .row > .col-lg-12,
 .main-slider-area .em-nivo-slider-wrapper,
 .main-slider-area #mainSlider_id2 {
-    height: 720px !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 .main-slider-area #mainSlider_id2 .nivo-main-image {
     width: 100% !important;
@@ -1090,15 +1100,17 @@ table#wp-calendar td#today {
     object-position: center;
 }
 @media (max-width: 991px) {
-    .main-slider-area .em-nivo-slider-wrapper,
-    .main-slider-area #mainSlider_id2 {
+    .main-slider-area {
         height: 460px !important;
+        min-height: 460px !important;
+        max-height: 460px !important;
     }
 }
 @media (max-width: 767px) {
-    .main-slider-area .em-nivo-slider-wrapper,
-    .main-slider-area #mainSlider_id2 {
+    .main-slider-area {
         height: 280px !important;
+        min-height: 280px !important;
+        max-height: 280px !important;
     }
 }
 .nivo-caption {
@@ -2078,6 +2090,31 @@ span.witr_list_text {
     border-color: #03a9f4;
     background: #03a9f4;
     color: #fff;
+}
+@media (max-width: 767px) {
+    .product-area-aligned .portfolio_nav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .product-area-aligned .portfolio_nav::-webkit-scrollbar {
+        display: none;
+    }
+    .product-area-aligned .portfolio_nav ul {
+        width: max-content;
+        min-width: 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .product-area-aligned.port2clmn .portfolio_nav ul li {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        border-radius: 10px 10px 0 0;
+        font-size: 12px;
+        line-height: 18px;
+        white-space: nowrap;
+    }
 }
 .product-pagination {
     display: flex;
