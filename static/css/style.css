@@ -1983,7 +1983,7 @@ span.witr_list_text {
 /* ===== Portfolio Area CSS ===== */
 .port_area {
     background: #F9F9F9;
-    padding: 85px 0 95px 0;
+    padding: 90px 0 90px 0;
 }
 .port2clmn .pstyle2 .prot_content_inner {
     top: 60%;
@@ -3460,7 +3460,10 @@ ul.page-numbers a.page-numbers {
 }
 /* ===== 12. Contact Area CSS ===== */
 .tr_cont_area {
-    padding: 90px 0 100px;
+	padding-top: 90px;
+	padding-right: 0;
+	padding-bottom: 100px;
+	padding-left: 0;
 }
 .apartment_text h1 {
     font-size: 17px;
