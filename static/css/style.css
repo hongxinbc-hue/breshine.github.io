@@ -2095,24 +2095,31 @@ span.witr_list_text {
     background: rgba(0, 0, 0, .30);
 }
 .product-basic-specs {
-    margin: 2px 0 0 !important;
-    line-height: 1.25 !important;
+    margin: 1px 0 0 !important;
+    line-height: 8px !important;
 }
 .product-basic-specs span {
-    font-size: 6px;
+    font-size: 8px;
     font-weight: 400;
+    line-height: 8px;
     white-space: normal;
+    transition: color .2s ease;
 }
 .product-model {
     display: block;
     color: #fff;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 10px;
+    transition: color .2s ease;
 }
 .product-card .porttitle_inner h3 {
     margin: 0;
-    line-height: 1.2;
+    line-height: 10px;
+}
+.product-model:hover,
+.product-basic-specs span:hover {
+    color: #03a9f4;
 }
 .pstyle2 .product-card .prot_content_inner,
 .pstyle2 .product-card .single_protfolio:hover .prot_content_inner,

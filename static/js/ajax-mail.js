@@ -7,19 +7,6 @@ $(function() {
 	var formMessages = $('.form-messege');
 	var submitButton = $(form).find('button[type="submit"]');
 
-	function loadCaptcha() {
-		$.getJSON('mail.php?captcha=1')
-			.done(function(data) {
-				$('#captcha-question').text(data.question);
-				$('#captcha-answer').val('');
-			})
-			.fail(function() {
-				$('#captcha-question').text('Security question unavailable. Please refresh.');
-			});
-	}
-
-	loadCaptcha();
-
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
@@ -39,7 +26,11 @@ $(function() {
 		$.ajax({
 			type: 'POST',
 			url: $(form).attr('action'),
-			data: formData
+			data: formData,
+			dataType: 'json',
+			headers: {
+				'Accept': 'application/json'
+			}
 		})
 		.done(function(response) {
 			// Make sure that the formMessages div has the 'success' class.
@@ -47,11 +38,10 @@ $(function() {
 			$(formMessages).addClass('success');
 
 			// Set the message text.
-			$(formMessages).text(response);
+			$(formMessages).text('Thank you! Your message has been sent successfully.');
 
 			// Clear the form.
 			$('#contact-form input,#contact-form textarea').val('');
-			loadCaptcha();
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.
@@ -59,12 +49,11 @@ $(function() {
 			$(formMessages).addClass('error');
 
 			// Set the message text.
-			if (data.responseText !== '') {
-				$(formMessages).text(data.responseText);
-			} else {
-				$(formMessages).text('Oops! An error occured and your message could not be sent.');
+			var message = 'Sorry, your message could not be sent. Please try again.';
+			if (data.responseJSON && data.responseJSON.errors && data.responseJSON.errors.length) {
+				message = data.responseJSON.errors.map(function(error) { return error.message; }).join(' ');
 			}
-			loadCaptcha();
+			$(formMessages).text(message);
 		})
 		.always(function() {
 			submitButton.prop('disabled', false).text('Send Message');
